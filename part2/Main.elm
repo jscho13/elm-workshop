@@ -22,17 +22,21 @@ main =
                 ]
     in
         div [ class "content" ]
-            [ text "TODO put the contents of elmHubHeader here instead of this text!"
+            [ elmHubHeader
             , ul [ class "results" ]
                 [ li []
                     [ span [ class "star-count" ]
-                        [-- TODO display the number of stars here.
-                         --
-                         -- HINT: You'll need some parentheses to do this!
+                        [ -- TODO display the number of stars here.
+                          --
+                          -- HINT: You'll need some parentheses to do this!
+                          text (toString model.result.stars)
                         ]
                       -- TODO use the model to put a link here that points to
                       -- https://github.com/TheSeamau5/elm-checkerboardgrid-tutorial
                       -- by prepending the "https://github.com/" part.
+                    , a [ href ("https://github.com/" ++ model.result.name) ]
+                        [ text "Link to checkerbooard"
+                        ]
                     ]
                 ]
             ]
