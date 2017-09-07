@@ -60,10 +60,6 @@ viewSearchResult result =
         ]
 
 
-type Msg
-    = Remove Int
-
-
 update msg model =
     -- TODO if msg.operation == "DELETE_BY_ID",
     -- then return a new model without the given ID present anymore.
