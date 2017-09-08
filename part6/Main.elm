@@ -26,9 +26,9 @@ searchResultDecoder =
     --
     -- TODO replace these calls to `hardcoded` with calls to `required`
     decode SearchResult
-        |> hardcoded 0
-        |> hardcoded ""
-        |> hardcoded 0
+        |> required "id" int
+        |> required "name" string
+        |> required "stargazers_count" int
 
 
 type alias Model =
@@ -69,8 +69,9 @@ decodeResults json =
         --
         -- HINT: decodeString returns a Result which is one of the following:
         --
-        -- Ok (List SearchResult)
-        -- Err String
+        Result.Ok results ->
+            results
+
         _ ->
             []
 
